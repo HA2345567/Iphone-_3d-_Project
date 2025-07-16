@@ -55,3 +55,6 @@ export const explore1Img = explore1;
 export const explore2Img = explore2;
 export const chipImg = chip;
 export const frameImg = frame;
+
+export const fallbackImg = '/assets/images/black.jpg';
+export const fallbackVideo = '/assets/videos/hero.mp4';

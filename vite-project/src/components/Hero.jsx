@@ -2,9 +2,10 @@
 import { useGSAP } from '@gsap/react'
 import { useState, useEffect } from 'react'
 import { gsap } from 'gsap'
-import { heroVideo, smallHeroVideo } from '../utils'
+import { heroVideo, smallHeroVideo, fallbackVideo } from '../utils'
 export const Hero = () => {
     const [videoSrc, setVideoSrc] = useState(window.innerWidth < 760 ? smallHeroVideo : heroVideo)
+    const [videoError, setVideoError] = useState(false);
 
     const handlerVideoSrcSet = () => {
         if (window.innerWidth < 760) {
@@ -19,7 +20,7 @@ export const Hero = () => {
         return () => {
             window.removeEventListener('resize', handlerVideoSrcSet)
         }
-    })
+    }, [])
 
 
 
@@ -34,10 +35,10 @@ export const Hero = () => {
             <div className="h-5/6 w-full flex-center flex-col">
                 <p id='hero' className="hero-title">iPhone 15 Pro</p>
                 <div className="md:w-10/12 w-9/12">
-                    <video className=" pointer-events-none" autoPlay muted playsInline={true} key={videoSrc}>
-                        <source src={videoSrc} type="video/mp4" />
+                    <video className=" pointer-events-none" autoPlay muted playsInline={true} key={videoSrc} onError={() => setVideoError(true)}>
+                        <source src={videoError ? fallbackVideo : videoSrc} type="video/mp4" />
                     </video>
-
+                    {videoError && <div style={{color:'red',textAlign:'center'}}>Video failed to load. Showing fallback.</div>}
                 </div>
 
             </div>

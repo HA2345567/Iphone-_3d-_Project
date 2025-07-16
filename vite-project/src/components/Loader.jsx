@@ -1,15 +1,12 @@
-import { Html } from "@react-three/drei"
+import { Html, useProgress } from "@react-three/drei"
 
-export const Loader=()=>{
-    return <div>
-        <Html>
-            <div className="absolute top-0 left-0 w-full flex justify-center items-center  ">
-                <div className="w-[10vw] rounded-full">
-                    Loading...
-
-                </div>
-
+export const Loader = () => {
+    const { progress } = useProgress();
+    return (
+        <Html center>
+            <div style={{ color: 'white', fontWeight: 'bold', fontSize: 24 }}>
+                Loading... {progress.toFixed(0)}%
             </div>
         </Html>
-    </div>
+    );
 }

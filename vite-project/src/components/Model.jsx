@@ -47,7 +47,7 @@ export const Model = () => {
                 duration: 2
             })
         }
-    }, [size])
+    }, [size, tl, small, smallRotation, large, largeRotation])
 
     useGSAP(() => {
         gsap.to('#heading', { y: 0, opacity: 1 })

@@ -1,16 +1,19 @@
 import { useRef } from 'react'
-import { chipImg, frameImg, frameVideo } from '../utils'
+import { chipImg, frameImg, frameVideo, fallbackImg, fallbackVideo } from '../utils'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap';
 import { animateWithGsap } from '../utils/animations';
+import { useState } from 'react';
 
 export const HowItWorks=()=>{
 
     const videoRef = useRef([]);
+    const [videoError, setVideoError] = useState(false);
+    const [imgError, setImgError] = useState(false);
 
     useGSAP(()=>{
         gsap.from('#chip', {
-            scrollTigger:{
+            scrollTrigger:{
                 trigger: "#chip",
                 start: '20% bottom'
             },
@@ -46,12 +49,14 @@ export const HowItWorks=()=>{
                 <div className=" mt-10 md:mt-20 mb-14">
                     <div className="relative h-full flex-center">
                         <div className="overflow-hidden">
-                            <img src={frameImg} alt="frame" className="bg-transparent relative z-10"/>
+                            <img src={imgError ? fallbackImg : frameImg} alt="frame" className="bg-transparent relative z-10" onError={() => setImgError(true)} />
+                            {imgError && <div style={{color:'red',textAlign:'center'}}>Image failed to load. Showing fallback.</div>}
                         </div>
                         <div className="hiw-video">
-                            <video className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef}>
-                                <source src={frameVideo} type="video/mp4"/>
+                            <video className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef} onError={() => setVideoError(true)}>
+                                <source src={videoError ? fallbackVideo : frameVideo} type="video/mp4"/>
                             </video>
+                            {videoError && <div style={{color:'red',textAlign:'center'}}>Video failed to load. Showing fallback.</div>}
                         </div>
                     </div>
                     <p className="text-gray font-semibold text-center mt-3"> Honkai: Star Rail</p>
