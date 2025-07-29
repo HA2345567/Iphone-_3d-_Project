@@ -1,8 +1,7 @@
 # 📱 iPhone 3D Interactive Showcase
 
 An immersive 3D iPhone web experience featuring interactive models, smooth animations, and Apple-inspired design. Built with modern web technologies for a premium user experience.
-
-![iPhone 3D Preview](https://via.placeholder.com/800x400/000000/FFFFFF?text=iPhone+3D+Showcase)
+![iPhone 15 Pro 3D Showcase](./public/assets/images/iphone.png)
 
 ## 🚀 **Live Demo**
 
@@ -60,7 +59,7 @@ npm >= 8.0.0
 ### **Installation**
 ```bash
 # Clone the repository
-git clone https://github.com/[your-username]/iphone-3d-project.git
+git clone https://github.com/HA2345567/iphone-3d-project.git
 
 # Navigate to project directory
 cd iphone-3d-project
@@ -116,11 +115,6 @@ iphone-3d-project/
 - **Swipe** - Navigate sections
 - **Tap** - Interact with elements
 
-## 📸 **Screenshots**
-
-| Desktop View | Mobile View | 3D Interaction |
-|--------------|-------------|----------------|
-| ![Desktop](https://via.placeholder.com/250x150/1a1a1a/FFFFFF?text=Desktop) | ![Mobile](https://via.placeholder.com/250x150/1a1a1a/FFFFFF?text=Mobile) | ![3D](https://via.placeholder.com/250x150/1a1a1a/FFFFFF?text=3D+Model) |
 
 ## ⚡ **Performance**
 
@@ -184,17 +178,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **React Community** - Frontend framework and ecosystem
 - **Vercel** - Hosting and deployment platform
 
-## 📞 **Contact**
-
-- **Portfolio**: [your-portfolio.com]
-- **GitHub**: [@your-username]
-- **LinkedIn**: [your-linkedin]
-- **Email**: your-email@domain.com
 
 ---
 
 ⭐ **Star this repository if you found it helpful!**
 
-![GitHub stars](https://img.shields.io/github/stars/[your-username]/iphone-3d-project?style=social)
-![GitHub forks](https://img.shields.io/github/forks/[your-username]/iphone-3d-project?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/[your-username]/iphone-3d-project?style=social)
+![GitHub stars](https://img.shields.io/github/stars/HA2345567/iphone-3d-project?style=social)
+![GitHub forks](https://img.shields.io/github/forks/HA2345567/iphone-3d-project?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/HA2345567/iphone-3d-project?style=social)
